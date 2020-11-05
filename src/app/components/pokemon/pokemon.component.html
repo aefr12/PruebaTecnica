@@ -1,0 +1,33 @@
+<div class="row">
+    <img [src]="imagen1" class="img-fluid" [alt]="nombre">
+    <div class="col-2">
+        <img [src]="imagen2" [alt]="nombre">
+        <img [src]="imagen3" [alt]="nombre">
+    </div>
+    <div class="col">
+        <h2 class="text-center">{{ nombre | uppercase }}</h2>
+        <p class="card-text">
+            <button type="button" class="btn btn-primary" disabled>
+                Habilidades <span class="badge badge-light">{{ habilidades.length }}</span>
+            </button>
+            <br>
+            <span class="badge badge-pill badge-secondary" *ngFor="let habilidad of habilidades">
+                {{ habilidad.ability.name }}
+            </span>
+        </p>
+        <p class="card-text">
+            <button type="button" class="btn btn-primary" disabled>
+                Movimientos <span class="badge badge-light">{{ movimientos.length }}</span>
+            </button>
+            <br>
+            <span class="badge badge-pill badge-secondary" *ngFor="let movimiento of movimientos">
+                {{ movimiento.move.name }}
+            </span>
+        </p>
+    </div>
+    <div class="col-4">
+        Experiencia
+        <h3 class="text-center">{{ experiencia }}</h3>
+        <button type="button" routerLink="home" class="btn btn-secondary btn-lg btn-block">REGRESAR</button>
+    </div>
+</div>
