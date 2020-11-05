@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PokeApiService } from 'src/app/services/poke-api.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +17,9 @@ export class SearchComponent {
    movimientos: [] = [];
    tipos: [] = [];
 
-  constructor( private pokemon: PokeApiService) { }
+  constructor( private pokemon: PokeApiService,
+               private auth: AuthService,
+               private router: Router) { }
 
   buscar(termino: string){
       this.pokemon.getPokemon( termino )
@@ -29,5 +33,10 @@ export class SearchComponent {
             this.movimientos = moves;
             this.tipos = types;
           });
+  }
+
+  salir(){
+    this.auth.logout();
+    this.router.navigateByUrl('/login');
   }
 }

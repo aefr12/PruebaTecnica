@@ -12,18 +12,12 @@ export class AuthService {
   private apiKey = 'AIzaSyCQiM_hATV41W2hXNdXU-uIPFX44L1ULDY';
   userToken: string;
 
-  //registrar
-  //https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
-
-  //iniciar sesion
-  //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
-
   constructor( private http: HttpClient) {
     this.leerToken();
    }
 
    logout(){
-
+     localStorage.removeItem('token');
    }
 
    login( usuario: UsuarioModel ){

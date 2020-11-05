@@ -1,4 +1,9 @@
 <div class="row">
+    <button class="btn btn-outline-danger" (click)="salir()">
+        SALIR
+    </button>
+</div>
+<div class="row">
     <div class="col">
         <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar Pokemon">
     </div>

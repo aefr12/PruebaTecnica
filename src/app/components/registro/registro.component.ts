@@ -24,7 +24,7 @@ export class RegistroComponent implements OnInit {
   onSubmit(){
     this.auth.nuevoUsuario(this.usuario)
         .subscribe( resp => {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/search');
         }, (err) => {
           console.log(err.error.error.message);
         });
